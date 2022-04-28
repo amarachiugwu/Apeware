@@ -1,0 +1,68 @@
+.ant-input-search, .ant-input-group, .ant-input-group span {
+    /* width:100% !important;
+    border : 2px solid #aaa !important;
+    padding : 10px !important; */
+    border-radius: 20px 0 0 20px !important;
+    background-color: transparent !important;
+}
+
+.ant-input-search .ant-input-group .ant-input, .ant-input-search .ant-input-group button {
+    outline:none !important;
+    /* border: none; */
+    /* padding : 10px !important; */
+    background-color: transparent !important;
+}
+
+.ant-input-search .ant-input-group .ant-input {
+    /* width:75% !important; */
+    border-radius : 20px 0 0 20px !important;
+}
+
+.ant-input-search .ant-input-group button {
+    /* width:10% !important; */
+    border-radius : 0 20px 20px 0 !important;
+    color : #ccc !important;
+    border-color: #ccc !important;
+}
+
+:root {
+    --main-color: #111;
+    --loader-color: #4CAF50;
+    --back-color: #A5D6A7;
+    --time: 3s;
+    --size: 3px;
+  }
+  
+  .loader {
+    background-color: var(--main-color);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    /* align-items: center; */
+    /* align-content: center;  */
+    justify-content: flex-start;  
+    z-index: 100000;
+  }
+  
+  .loader__element {
+    height: var(--size);
+    width: 100%;
+    background: var(--back-color);
+  
+  }
+  
+  .loader__element:before {
+    content: '';
+    display: block;
+    background-color: var(--loader-color);
+    height: var(--size);
+    width: 0;
+    animation: getWidth var(--time) ease-in infinite;
+  }
+  
+  @keyframes getWidth {
+    100% { width: 100%; }
+  }
