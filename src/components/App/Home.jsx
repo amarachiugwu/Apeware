@@ -1,8 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import { TypedTextAnimation } from "./TypedTextAnimation";
+import Featuring from "./Data/Featuring.json";
 import { NotableDrops } from "./NotableDrops";
+import { TopTrendings } from "./TopTrendings";
 import { TopCollections } from "./TopCollections";
+
 
 const styles = {
 
@@ -53,7 +56,7 @@ export default function Home() {
                     <div className="card bg-white nft-items nft-primary img-skewed rounded-md shadow overflow-hidden mb-1 p-3">
                       
                         <div className="nft-image rounded-md mt-3 position-relative overflow-hidden shadow">
-                            <Link to="/assets"><img src="https://lh3.googleusercontent.com/-mrglknzUSrn6SZhH0hZ3c14gyQgTSvcx1kAKimiNhChrlrsJHfd9KGbUmVlW4Ji5lWFVOUkF3-KxR5wDDe-7NB-JIWgXfSVg97o=s550" className="img-fluid" alt="" /></Link>
+                            <Link to={"/asset/"+Featuring[0].addrs}><img src={Featuring[0].image} className="img-fluid" alt={Featuring[0].name} /></Link>
                             
                         </div>
 
@@ -61,9 +64,9 @@ export default function Home() {
 
                             <div className="d-flex align-items-center justify-content-between">
                                 <div className="d-flex align-items-center">
-                                    <img src="images/client/11.jpg" alt="user" className="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle" />
-                                    <Link to="##" onClick={e => prevDefault(e)} className="text-dark small creator-name h6 mb-0 ms-2">Set Me Free</Link> <br />
-                                    <span> BanksyVault</span>
+                                    <img src={Featuring[0].profile_pic} alt="user" className="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle" />
+                                    <Link to={"/asset/"+Featuring[0].addrs} className="text-dark small creator-name h6 mb-0 ms-2">{Featuring[0].name}<br />
+                                    <p style={{ display:"block", color:"#1868B7" }}> {Featuring[0].owner}</p></Link> 
                                 </div>
                             </div>
 
@@ -110,13 +113,13 @@ export default function Home() {
         <div className="row justify-content-center">
             <div className="col">
                 <div className="section-title text-center mb-5 pb-3">
-                    <h4 className="title mb-4">Trending In All Category</h4>
+                    <h4 className="title mb-4">Top Trendings</h4>
                 </div>
             </div>
         </div>
 
         <div className="row g-4">
-            <NotableDrops />
+            <TopTrendings />
         </div>
         
 
