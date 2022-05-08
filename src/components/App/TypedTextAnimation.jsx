@@ -1,7 +1,7 @@
 //=========================================//
 /*/* 10) Typed Text animation (animation) */
 //=========================================//
-
+import React from "react";
 
 export const TypedTextAnimation = () => {
     try {
@@ -65,6 +65,6 @@ export const TypedTextAnimation = () => {
     }
 
     return(
-        <h4 className="heading text-white title-dark fw-bold mb-3">Join The New Era of <br /> <span className="typewrite" data-period="2000" data-type='[ "Musics", "Digital Arts", "Illustrations", "Videos", "GIFs"]'></span></h4>
+        <h4 className="heading text-dark title-dark fw-bold mb-3">Join The New Era of <br /> <span className="typewrite" data-period="2000" data-type='[ "Musics", "Digital Arts", "Illustrations", "Videos", "GIFs"]'></span></h4>
     );
 }

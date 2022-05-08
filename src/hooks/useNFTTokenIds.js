@@ -7,6 +7,7 @@ import { useIPFS } from "./useIPFS";
 export const useNFTTokenIds = (addr) => {
   const { token } = useMoralisWeb3Api();
   const { chainId } = useMoralisDapp();
+  console.log(chainId);
   const { resolveLink } = useIPFS();
   const [NFTTokenIds, setNFTTokenIds] = useState([]);
   const [totalNFTs, setTotalNFTs] = useState();

@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Link,
     NavLink,
@@ -81,9 +82,7 @@ export function Header () {
                         </ul>
                     </li>
 
-                    <li><Link to="/" className="sub-menu-item">Profile</Link></li>
-                    
-                    <li><Link to="/transactions" className="sub-menu-item"> Activity</Link></li>
+                    <li><Link to="/transactions" className="sub-menu-item"> Stats</Link></li>
 
                     <li className="has-submenu parent-parent-menu-item">
                         <Link to="##" onClick={e => prevDefault(e)}>More</Link><span className="menu-arrow"></span>
@@ -93,6 +92,9 @@ export function Header () {
                             <li><Link to="/privacy" className="sub-menu-item">Privacy Policy</Link></li>
                         </ul>
                     </li> 
+
+                    <li><Link to="/" className="sub-menu-item">Create</Link></li>
+
 
                     <Account />
                     

@@ -262,7 +262,25 @@
 
 .bg-gradient-primary,
 .blog.blog-primary .tag.gradient {
-  background: linear-gradient(to right, #1066e7 0%, #ffa432 100%) !important;
+  /* background: linear-gradient(to right, #1066e7 0%, #ffa432 100%) !important; */
+  background: url("https://lh3.googleusercontent.com/51ADjK-OruSkpYwOhLbW5bjc4nCwgMJG_qVx8-NbWpyUJLz_DjHZ9_1zEDTzeWTXqWa2IEJrSEOfbN02u_SJagDEpN2igIUGHtRBzA=s550") !important;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: linear-gradient(to right, #1066e7 0%, #ffa432 100%) /* Fallback color */
+  /* background-color: rgba(0,0,0, 0.4); Black w/opacity/see-through */
+}
+
+.bg-gradient-primary:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .text-gradient-primary {

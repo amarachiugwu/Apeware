@@ -1,3 +1,4 @@
+import React from 'react';
 import TopCollection from "./Data/topCollection.json";
 
 export const TopCollections = () => {

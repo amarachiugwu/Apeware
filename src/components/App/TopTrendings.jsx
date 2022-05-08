@@ -1,3 +1,4 @@
+import React from 'react';
 import TopTrends from "./Data/topTrending.json";
 import {Link} from "react-router-dom";
 
@@ -19,11 +20,11 @@ export const TopTrendings = () => {
                     </div>
                     <div className="card-body position-relative p-4">
 
-                        <Link href={"/asset/"+nft.addrs} className="text-dark title h5 mt-3">{nft.name}</Link>
+                        <Link to={"/asset/"+nft.addrs} className="text-dark title h5 mt-3">{nft.name}</Link>
                         
                         <div className="mt-3 d-flex justify-content-between align-items-center">
-                        <Link href={"/asset/"+nft.addrs} className="btn btn-link text-muted">Know more <i data-feather="arrow-right" className="fea icon-sm"></i></Link>
-                            <span className="text-muted fs-6">by <Link href={"/asset/"+nft.addrs} className="link">{nft.owner}</Link></span>
+                        <Link to={"/asset/"+nft.addrs} className="btn btn-link text-muted">Know more <i data-feather="arrow-right" className="fea icon-sm"></i></Link>
+                            <span className="text-muted fs-6">by <Link to={"/asset/"+nft.addrs} className="link">{nft.owner}</Link></span>
                         </div>
                     </div>
                 </div>

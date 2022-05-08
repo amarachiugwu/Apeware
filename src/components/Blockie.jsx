@@ -1,3 +1,4 @@
+import React from "react";
 import { Skeleton } from "antd";
 import Blockies from "react-blockies";
 import { useMoralis } from "react-moralis";

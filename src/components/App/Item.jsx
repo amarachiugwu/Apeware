@@ -1,58 +1,18 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { getNativeByChain } from "helpers/networks";
-import { getCollectionsByChain } from "helpers/collections";
 import {
-  useMoralis,
   useMoralisQuery,
-  useNewMoralisObject,
 } from "react-moralis";
-import { useIPFS } from "hooks/useIPFS";
-import { Card, Image, Tooltip, Modal, Badge, Alert, Spin } from "antd";
+import { Modal, Badge, Alert, Spin } from "antd";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
-import {
-  FileSearchOutlined,
-  RightCircleOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons";
+
 import { Link } from "react-router-dom";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
-import { getExplorer } from "helpers/networks";
 import { useWeb3ExecuteFunction } from "react-moralis";
 import { useParams } from "react-router-dom";
-const { Meta } = Card;
 
-
-const styles = {
-  NFTs: {
-    display: "flex",
-    flexWrap: "wrap",
-    WebkitBoxPack: "start",
-    justifyContent: "flex-start",
-    margin: "0 auto",
-    maxWidth: "1000px",
-    gap: "10px",
-  },
-  banner: {
-    background : "url('/images/bg/03.jpg') bottom",
-    marginBottom: "40px",
-  },
-  logo: {
-    height: "115px",
-    width: "115px",
-    borderRadius: "50%",
-    // positon: "relative",
-    // marginTop: "-80px",
-    border: "solid 4px white",
-  },
-  text: {
-    color: "#041836",
-    fontSize: "27px",
-    fontWeight: "bold",
-  },
-};
-
-  
+ 
 
 function Asset() {
 
@@ -69,12 +29,12 @@ function Asset() {
   const [nftToBuy, setNftToBuy] = useState(null);
   const [loading, setLoading] = useState(false);
   const contractProcessor = useWeb3ExecuteFunction();
-  const { chainId, marketAddress, contractABI, walletAddress } =
+  const { chainId, marketAddress, contractABI } =
     useMoralisDapp();
   const nativeName = getNativeByChain(chainId);
   // const contractABIJson = JSON.parse(contractABI);
   const contractABIJson = contractABI;
-  const { Moralis } = useMoralis();
+  // const { Moralis } = useMoralis();
   const queryMarketItems = useMoralisQuery("MarketItems");
   const fetchMarketItems = JSON.parse(
     JSON.stringify(queryMarketItems.data, [
@@ -117,7 +77,7 @@ function Asset() {
         // updateSoldMarketItem();
         succPurchase();
       },
-      onError: (error) => {
+      onError: () => {
         setLoading(false);
         failPurchase();
       },
@@ -152,16 +112,16 @@ function Asset() {
     }, secondsToGo * 1000);
   }
 
-  async function updateSoldMarketItem() {
-    const id = getMarketItem(nftToBuy).objectId;
-    const marketList = Moralis.Object.extend("MarketItems");
-    const query = new Moralis.Query(marketList);
-    await query.get(id).then((obj) => {
-      obj.set("sold", true);
-      obj.set("owner", walletAddress);
-      obj.save();
-    });
-  }
+  // async function updateSoldMarketItem() {
+  //   const id = getMarketItem(nftToBuy).objectId;
+  //   const marketList = Moralis.Object.extend("MarketItems");
+  //   const query = new Moralis.Query(marketList);
+  //   await query.get(id).then((obj) => {
+  //     obj.set("sold", true);
+  //     obj.set("owner", walletAddress);
+  //     obj.save();
+  //   });
+  // }
 
   const getMarketItem = (nft) => {
     const result = fetchMarketItems?.find(

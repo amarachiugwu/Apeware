@@ -1,3 +1,5 @@
+import React from 'react';
+import {Link} from "react-router-dom";
 import { useMoralis } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters";
 import Blockie from "../Blockie";
@@ -48,16 +50,38 @@ function Account() {
     useMoralis();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
+  // console.log(isAuthenticated);
+  // console.log(account);
+  // console.log(chainId);
+  // console.log(authenticate);
+
+
+
 
   if (!isAuthenticated || !account) {
     return (
       <>
-        <li className="list-inline-item mb-0 me-1" onClick={() => setIsAuthModalVisible(true)}>
-          <a id="connectWallet">
+
+        <li className="list-inline-item mb-0" style={{ margin: "20px 10px" }}>
+          <div className="dropdown dropdown-primary">
+              <Link to="/connect" type="button" className="btn btn-pills p-0"> <span class="btn-icon-dark"><span class="btn btn-icon btn-pills btn-primary"><i class="uil uil-user fs-6"></i></span></span></Link>
+              {/* <div className="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 pb-3 pt-0 overflow-hidden rounded" style={{ minWidth: "200px" }}>
+                  
+                  <div className="mt-2">
+                      <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
+                      <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                      <div className="dropdown-divider border-top"></div>
+                  </div>
+              </div> */}
+          </div>
+        </li>
+
+        <li className="list-inline-item mb-0 me-1" onClick={() => setIsAuthModalVisible(true)} style={{ margin: "20px 10px" }}>
+          <a id="connectWallet"  style={{ paddingTop: "3px"}}>
               <span className="btn-icon-dark"><span className="btn btn-icon btn-pills btn-primary"><i className="uil uil-wallet fs-6"></i></span></span>
-              {/* <span className="btn-icon-light"><span className="btn btn-icon btn-pills btn-light"><i className="uil uil-wallet fs-6"></i></span></span> */}
           </a>
         </li>
+
         <Modal
           visible={isAuthModalVisible}
           footer={null}
@@ -108,27 +132,45 @@ function Account() {
 
   return (
     <>
-      {/* <button
-        onClick={async () => {
-          try {
-            console.log("change")
-            await web3._provider.request({
-              method: "wallet_switchEthereumChain",
-              params: [{ chainId: "0x38" }],
-            });
-            console.log("changed")
-          } catch (e) {
-            console.error(e);
-          }
-        }}
-      >
-        Hi
-      </button> */}
-      <div style={styles.account} onClick={() => setIsModalVisible(true)}>
-        <p style={{ marginRight: "5px", ...styles.text }}>
+        <li className="list-inline-item mb-0" style={{ margin: "20px 10px" }}>
+          <div className="dropdown dropdown-primary">
+              <button type="button" className="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/client/01.jpg" className="rounded-pill avatar avatar-sm-sm" alt="" /></button>
+              <div className="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 pb-3 pt-0 overflow-hidden rounded" style={{ minWidth: "200px" }}>
+                  <div className="position-relative">
+                      <div className="pt-5 pb-3 bg-gradient-primary"></div>
+                      <div className="px-3">
+                          <div className="d-flex align-items-end mt-n4">
+                              <img src="images/client/01.jpg" className="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="" />
+                              <h6 className="text-dark fw-bold mb-0 ms-1">Calvin Carlo</h6>
+                          </div>
+                          <div className="mt-2">
+                              <small className="text-start text-dark d-block fw-bold">Wallet:</small>
+                              <div className="d-flex justify-content-between align-items-center">
+                                  <small id="myPublicAddress" className="text-muted">qhut0...hfteh45</small>
+                                  <a href="#" className="text-primary"><span className="uil uil-copy"></span></a>
+                              </div>
+                          </div>
+                          
+                          <div className="mt-2">
+                              <small className="text-dark">Balance: <span className="text-primary fw-bold">0.00045ETH</span></small>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="mt-2">
+                      <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
+                      <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                      <div className="dropdown-divider border-top"></div>
+                      <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="lock-screen.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Logout</a>
+                  </div>
+              </div>
+          </div>
+        </li>
+
+      <div style={{ margin: "20px 10px", paddingTop: "3px" }} onClick={() => setIsModalVisible(true)}>
+        {/* <p style={{ marginRight: "5px", ...styles.text }}>
           {getEllipsisTxt(account, 6)}
-        </p>
-        <Blockie currentWallet scale={3} />
+        </p> */}
+        <Blockie currentWallet scale={4} style={{ width: "36px", height: "36px" }} />
       </div>
       <Modal
         visible={isModalVisible}

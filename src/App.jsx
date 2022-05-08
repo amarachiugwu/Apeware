@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import { Layout } from 'antd';
-import {Header as HeaderContent} from './components/App/Header';
-import {Footer as FooterContent} from './components/App/Footer';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Layout } from "antd";
+import Connect from "components/Account/Connect";
+import { Header as HeaderContent } from "./components/App/Header";
+import { Footer as FooterContent } from "./components/App/Footer";
 import Home from "components/App/Home";
 import Collection from "components/App/Collection";
 import Category from "components/App/Category";
@@ -16,11 +13,8 @@ import Item from "components/App/Item";
 import NFTTokenIds from "components/NFTTokenIds";
 
 const { Content, Footer } = Layout;
-
-
 const App = () => {
-
-  const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } = useMoralis();
+  const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading }  = useMoralis();
 
   const [inputValue, setInputValue] = useState("explore");
 
@@ -34,19 +28,20 @@ const App = () => {
   return (
     <Layout className="layout">
       <Router>
-
         <header id="topnav" className="defaultscroll sticky">
-            <div className="container">
-              <HeaderContent />
-            </div>
+          <div className="container">
+            <HeaderContent />
+          </div>
         </header>
-
         <div>
           <Switch>
             <Content>
-              <div  style={{ minHeight: "280px"}}>
+              <div style={{ minHeight: "280px" }}>
                 <Route exact path="/">
                   <Home />
+                </Route>
+                <Route path="/connect">
+                  <Connect />
                 </Route>
                 <Route path="/collection/:id">
                   <Collection />
@@ -67,18 +62,12 @@ const App = () => {
             </Content>
           </Switch>
         </div>
-
-      
         <Footer style={{ padding: "0px" }}>
           <FooterContent />
         </Footer>
-
       </Router>
+    </Layout>
+  );
+};
 
-  </Layout>
-  )
-  
-}
-
-
-export default App
+export default App;

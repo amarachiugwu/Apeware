@@ -28,10 +28,6 @@ const styles = {
 
 export default function Home() {
 
-    const prevDefault = e => {
-        e.preventDefault();
-    }
-
   return(
 
     <>
@@ -42,12 +38,12 @@ export default function Home() {
             <div className="row align-items-center">
                 <div className="col-lg-7 col-md-6">
                     <div className="title-heading">
-                        <h6 className="text-light title-dark fw-normal">Explore, Create & Collect NFTs</h6>
+                        <h6 className="text-dark title-dark fw-normal">Explore, Create & Collect NFTs</h6>
                         <TypedTextAnimation />
-                        <p className="text-white-50 para-desc mb-0 mb-0">We are a huge marketplace dedicated to connecting great artists of all Apeware with their fans and unique token collectors!</p>
+                        <p className="text-dark-50 para-desc mb-0 mb-0">We are a huge marketplace dedicated to connecting great artists of all Apeware with their fans and unique token collectors!</p>
                     
                         <div className="mt-4 pt-2">
-                            <Link to="/assets" className="btn btn-pills btn-outline-light-white">Discover Now</Link>
+                            <Link to="/assets" className="btn btn-pills btn-primary">Discover Now</Link>
                         </div>
                     </div>
                 </div>
