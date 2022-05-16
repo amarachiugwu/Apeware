@@ -144,21 +144,27 @@ function Account() {
                               <h6 className="text-dark fw-bold mb-0 ms-1">Calvin Carlo</h6>
                           </div>
                           <div className="mt-2">
-                              <small className="text-start text-dark d-block fw-bold">Wallet:</small>
+                              <small className="text-start text-dark d-block fw-bold">Address:</small>
                               <div className="d-flex justify-content-between align-items-center">
-                                  <small id="myPublicAddress" className="text-muted">qhut0...hfteh45</small>
-                                  <a href="#" className="text-primary"><span className="uil uil-copy"></span></a>
+                              <Address
+                                avatar="left"
+                                size={6}
+                                copyable
+                                style={{ fontSize: "16px" }}
+                              />
+                                  {/* <small id="myPublicAddress" className="text-muted">{getEllipsisTxt(account, 6)}</small> */}
+                                  {/* <a href="#" className="text-primary"><span className="uil uil-copy"></span></a> */}
                               </div>
                           </div>
                           
-                          <div className="mt-2">
+                          {/* <div className="mt-2">
                               <small className="text-dark">Balance: <span className="text-primary fw-bold">0.00045ETH</span></small>
-                          </div>
+                          </div> */}
                       </div>
                   </div>
                   <div className="mt-2">
-                      <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
-                      <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                      <Link className="dropdown-item small fw-semibold text-dark d-flex align-items-center" to="/profile"><span className="mb-0 d-inline-block me-1"><i className="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</Link>
+                      <Link className="dropdown-item small fw-semibold text-dark d-flex align-items-center" to="/setting"><span className="mb-0 d-inline-block me-1"><i className="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</Link>
                       <div className="dropdown-divider border-top"></div>
                       <a className="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="lock-screen.html"><span className="mb-0 d-inline-block me-1"><i className="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Logout</a>
                   </div>

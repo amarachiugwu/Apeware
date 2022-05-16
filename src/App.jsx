@@ -43,6 +43,18 @@ const App = () => {
                 <Route path="/connect">
                   <Connect />
                 </Route>
+                <Route path="/profile">
+                  <Connect />
+                </Route>
+                <Route path="/create">
+                  <Connect />
+                </Route>
+                 <Route path="/profileedit">
+                  <Connect />
+                </Route>
+                <Route path="/settings">
+                  <Connect />
+                </Route>
                 <Route path="/collection/:id">
                   <Collection />
                 </Route>

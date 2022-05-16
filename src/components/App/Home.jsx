@@ -33,7 +33,7 @@ export default function Home() {
     <>
     
     <section className="bg-half-170 d-table w-100" style={styles.banner} >
-        <div className="bg-overlay bg-gradient-primary opacity-8"></div>
+        <div className="bg-overlay bg-gradient-primary banner opacity-8"></div>
         <div className="container">
             <div className="row align-items-center">
                 <div className="col-lg-7 col-md-6">

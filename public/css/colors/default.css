@@ -262,7 +262,10 @@
 
 .bg-gradient-primary,
 .blog.blog-primary .tag.gradient {
-  /* background: linear-gradient(to right, #1066e7 0%, #ffa432 100%) !important; */
+  background: linear-gradient(to right, #1066e7 0%, #ffa432 100%) !important;
+}
+
+.banner{
   background: url("https://lh3.googleusercontent.com/51ADjK-OruSkpYwOhLbW5bjc4nCwgMJG_qVx8-NbWpyUJLz_DjHZ9_1zEDTzeWTXqWa2IEJrSEOfbN02u_SJagDEpN2igIUGHtRBzA=s550") !important;
   filter: blur(8px);
   -webkit-filter: blur(8px);
@@ -277,7 +280,7 @@
   /* background-color: rgba(0,0,0, 0.4); Black w/opacity/see-through */
 }
 
-.bg-gradient-primary:before {
+.banner:before {
   content: "";
   position: absolute;
   top: 0;

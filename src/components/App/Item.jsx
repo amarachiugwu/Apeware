@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
 
  
 
-function Asset() {
+function Item() {
 
   const params = useParams();
   const { addr: collectionAddress } = params; 
@@ -309,7 +309,7 @@ function Asset() {
   );
 }
 
-export default Asset;
+export default Item;
 
   // https://etherscan.io/tx/0x0a448f9e880cc0a195bb16a1f3bc72436605c8a327b40df93e0883801e34794d
   // 0xaf30435412478a8da7ec780192ce1a65278fedab
