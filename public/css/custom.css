@@ -29,7 +29,8 @@
 }
 
 .ant-input-affix-wrapper-lg,
-.ant-input-group, #search{
+.ant-input-group,
+#search {
   border-color: #3c4858 !important;
 }
 
@@ -80,24 +81,24 @@
 .discord {
   width: 90%;
   margin: 0 auto;
-  padding : 80px 30px;
+  padding: 80px 30px;
   background-image: url("https://static.opensea.io/solana/home-banner.png");
   background-repeat: no-repeat;
-  border-radius:5px 5px;
+  border-radius: 5px 5px;
 }
 
 .discord p {
-  font-weight:700;
+  font-weight: 700;
   font-size: 30px;
   float: left;
 }
 
-.header-account{
-  display:none !important;
+.header-account {
+  display: none !important;
 }
 
-@media screen and (max-width: 1024px){
-  .header-account{
-    display:block !important;
+@media screen and (max-width: 1024px) {
+  .header-account {
+    display: block !important;
   }
 }
