@@ -41,10 +41,17 @@ export default function Home() {
                         <h6 className="text-dark title-dark fw-normal">Explore, Create & Collect NFTs</h6>
                         <TypedTextAnimation />
                         <p className="text-dark-50 para-desc mb-0 mb-0">We are a huge marketplace dedicated to connecting great artists of all Apeware with their fans and unique token collectors!</p>
-                    
-                        <div className="mt-4 pt-2">
-                            <Link to="/assets" className="btn btn-pills btn-primary">Discover Now</Link>
+
+                        <div className="row">
+                            <div className="col-6 col-md-4  mt-4 pt-2">
+                                <Link to="/assets" className="btn btn-pills btn-primary"  style={{fontWeight:500, padding:"10px 15px", width:"100%", fontSize:"16px"}}>Discover</Link>
+                            </div>
+
+                            <div className="col-6 col-md-4  mt-4 pt-2">
+                                <Link to="/assets" className="btn btn-pills btn-primary"  style={{fontWeight:500, padding:"10px 15px", width:"100%", fontSize:"16px"}}>Create</Link>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -72,6 +79,33 @@ export default function Home() {
             </div>
         </div>
     </section>
+
+    <div className="container mt-100 mt-60">
+        <div className="row">
+            <div className="col">
+                <div className="section-two rounded-md shadow bg-gradient-primary px-md-5 px-4">
+                    <div className="row align-items-end">
+                        <div className="col-md-8">
+                            <div className="section-title text-md-start text-center">
+                                <h4 className="title text-white title-dark">Join our community!</h4>
+                            </div>
+                        </div>
+
+                        <div className="col-md-4 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                            <div className="text-md-end text-center">
+                                <a href="become-creator.html" className="btn btn-primary rounded-md">Discord <i className="uil uil-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* <div className="discord">
+        <p classname="text-dark title-dark fw-normal">Join our community</p>
+        <button classname="btn btn-pills btn-primary">Discord</button>
+    </div> */}
 
     <div className="container mt-100 mt-60">
         <div className="row justify-content-center">

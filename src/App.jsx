@@ -28,7 +28,7 @@ const App = () => {
   return (
     <Layout className="layout">
       <Router>
-        <header id="topnav" className="defaultscroll sticky">
+        <header id="topnav" className="defaultscroll nav-sticky">
           <div className="container">
             <HeaderContent />
           </div>

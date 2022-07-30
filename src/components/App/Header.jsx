@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Link,
     NavLink,
@@ -22,9 +22,21 @@ export function Header () {
             isOpen.style.display = "block";
         }
       };
-    
+      
+      const [clicked, setClicked] = useState(false);
+
       const prevDefault = e => {
         e.preventDefault();
+        if (clicked) {
+            alert('hi');
+            e.target.classList.add('open');
+            setClicked(true);
+        } else {
+            alert('hello');
+            e.target.classList.remove('open');
+            setClicked(false);
+        }
+        
       }
 
     return (
@@ -59,12 +71,13 @@ export function Header () {
                         className="input search text"
                         style={{
                             display : "inline-block",  
-                            width: "350px",
+                            width: "300px",
                             margin: "20px",
+                            Bordercolor: "#3c4858",
+                            color: "#3c4858"
                                 }}
                         placeholder="Search collections and accounts"
                         allowClear
-                        enterButton="GO"
                         size="large"
                         // loading="true"
                         onSearch={onSearch}

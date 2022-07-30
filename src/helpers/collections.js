@@ -247,7 +247,6 @@ export const getCollectionsByCategory = (chain, category) => {
     if (getCollectionsByChain(chain)[index].category === category) {
       catCollection.push(getCollectionsByChain(chain)[index]);
     }
-    
   }
 
   return catCollection;
